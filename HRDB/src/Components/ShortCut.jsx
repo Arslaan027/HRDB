@@ -5,7 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const ShortCut = () => {
   return (
-    <div className="flex gap-4 flex-col bg-white rounded-lg p-4 dark:bg-gray-600">
+    <div className="flex gap-4 flex-col bg-white rounded-lg p-4 dark:bg-gray-800">
       <Title>ShortCut</Title>
 
       {shortcutLink.map((list, index) => (

@@ -38,7 +38,7 @@ const Donutchart = ({ darkMode }) => {
     },
   };
   return (
-    <div className="py-6 bg-white rounded-lg p-5 flex dark:bg-gray-600 items-center justify-center">
+    <div className="py-6 bg-white rounded-lg p-5 flex dark:bg-gray-800 items-center justify-center">
       <Chart
         options={options.options}
         series={options.series}

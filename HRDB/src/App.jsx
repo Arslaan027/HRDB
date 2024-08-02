@@ -4,6 +4,9 @@ import Sidebar from "./Components/Sidebar";
 import Main from "./Components/Main";
 import Content from "./Components/Content";
 import Employee from "./Components/Employee";
+import Stats from "./Components/Stats";
+import Team from "./Components/Team";
+import Event from "./Components/Event";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -25,7 +28,13 @@ function App() {
         />
         <Sidebar isSidebarOpen={isSidebarOpen} />
         <Main>
-          <Content>Main Content</Content>
+          <Content>
+            <Stats darkMode={darkMode} />
+            <div className="flex flex-col gap-3 lg:flex-row">
+              <Team />
+              <Event />
+            </div>
+          </Content>
           <Employee>Employee</Employee>
         </Main>
       </div>

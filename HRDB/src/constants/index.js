@@ -21,6 +21,11 @@ import user01 from "../assets/user01.png";
 import user02 from "../assets/user02.png";
 import user03 from "../assets/user03.png";
 
+import adilbhai from "../Images/adilbhai.jpg";
+import asadbhai from "../Images/asadbhai.jpg";
+import salman from "../Images/salman.jpg";
+import arslaan from "../Images/arslaan.jpg";
+
 export const links = [
   {
     href: "#",
@@ -60,11 +65,11 @@ export const links = [
   {
     href: "#",
     icon: IoIosLogIn,
-    text: "Sign In",
+    text: "Log In",
   },
   {
     href: "#",
-    icon: IoIosLogOut,
+    icon: IoIosLogIn,
     text: "Sign Up",
   },
 ];
@@ -111,38 +116,38 @@ export const shortcutLink = [
 
 export const users = [
   {
-    name: "Robert Fox",
-    country: "USA",
-    role: "Python Developer",
-    image: user01,
+    name: "Shereyar SM Adil",
+    country: "India",
+    role: "Manager",
+    image: adilbhai, // Corrected: Use direct reference to the image
     bgColor: "bg-yellow-100",
   },
   {
-    name: "Jane Doe",
-    country: "UK",
-    role: "Frontend Developer",
-    image: user02,
+    name: "Asad Khan",
+    country: "Jamalpur",
+    role: "Backend Developer",
+    image: asadbhai, // Corrected: Use direct reference to the image
     bgColor: "bg-blue-100",
   },
   {
-    name: "John Smith",
-    country: "Canada",
-    role: "Backend Developer",
-    image: user03,
+    name: "Md Salman",
+    country: "Ali Nager",
+    role: "Web Developer",
+    image: salman, // Corrected: Use direct reference to the image
     bgColor: "bg-gray-100",
   },
   {
-    name: "Alice Johnson",
-    country: "Australia",
-    role: "Full Stack Developer",
-    image: user01,
+    name: "Arslaan Ahmad",
+    country: "Iqra Colony",
+    role: "Web Developer",
+    image: arslaan, // Corrected: Use direct reference to the image
     bgColor: "bg-slate-100",
   },
 ];
 
 export const events = [
   {
-    date: "01 Aug",
+    date: "08 Aug",
     title: "Upcoming Event",
     description: "Lorem ipsum dolor sit amet.",
   },
@@ -154,6 +159,11 @@ export const events = [
   {
     date: "20 Sept",
     title: "Networking Meetup",
+    description: "Connect with professionals in your field.",
+  },
+  {
+    date: "25 Sept",
+    title: "Developers Meetup",
     description: "Connect with professionals in your field.",
   },
 ];
