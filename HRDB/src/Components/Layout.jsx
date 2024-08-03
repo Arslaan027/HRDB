@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Headbar-Sidebar/Header";
 import Sidebar from "./Headbar-Sidebar/Sidebar";
-import Main from "../Components/Daxbod/Main";
+import Main from "./Daxbod/Dashboard";
 
 const Layout = ({ darkMode, toggleDarkMode, toggleSidebar, isSidebarOpen }) => {
   return (
@@ -13,9 +13,7 @@ const Layout = ({ darkMode, toggleDarkMode, toggleSidebar, isSidebarOpen }) => {
         toggleSidebar={toggleSidebar}
       />
       <Sidebar isSidebarOpen={isSidebarOpen} />
-      <Main>
-        <Outlet />
-      </Main>
+      <Outlet />
     </div>
   );
 };

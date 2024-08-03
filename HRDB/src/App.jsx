@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "../src/Components/Layout";
-
-import Employee from "../src/Components/Pages/Employee"; // Example component
+import Dashboard from "./Components/Daxbod/Dashboard";
+import Employee from "./Components/Pages/Employee/Employee"; // Example component
 import Payroll from "../src/Components/Pages/Payroll"; // Example component
 // Import other components as needed
 
@@ -27,9 +27,9 @@ function App() {
             />
           }
         >
-          <Route path="employee" element={<Employee />} />
-          <Route path="payroll" element={<Payroll />} />
-          {/* Define other routes */}
+          <Route index element={<Dashboard />} />
+          <Route path="/employee" element={<Employee />} />
+          <Route path="/payroll" element={<Payroll />} />
         </Route>
       </Routes>
     </Router>
