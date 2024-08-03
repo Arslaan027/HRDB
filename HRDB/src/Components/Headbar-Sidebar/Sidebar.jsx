@@ -10,6 +10,11 @@ import { IoIosLogIn } from "react-icons/io";
 const Sidebar = ({ isSidebarOpen }) => {
   const links = [
     {
+      to: "/",
+      icon: FaUsersCog,
+      text: "Dashboard",
+    },
+    {
       to: "/employee",
       icon: FaCalendarAlt,
       text: "Employee",
