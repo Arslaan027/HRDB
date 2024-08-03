@@ -1,0 +1,86 @@
+import { Link } from "react-router-dom";
+import {
+  FaCalendarAlt,
+  FaFacebookMessenger,
+  FaUsersCog,
+  FaListAlt,
+} from "react-icons/fa";
+import { IoIosLogIn } from "react-icons/io";
+
+const Sidebar = ({ isSidebarOpen }) => {
+  const links = [
+    {
+      to: "/employee",
+      icon: FaCalendarAlt,
+      text: "Employee",
+      badge: {
+        text: " ",
+        color: "bg-gray-100 text-gray-800",
+        darkColor: "dark:bg-gray-700 dark:text-gray-300",
+      },
+    },
+    {
+      to: "/payroll",
+      icon: FaFacebookMessenger,
+      text: "PayRoll",
+      badge: {
+        text: "Pending",
+        color: "bg-blue-100 text-blue-800",
+        darkColor: "dark:bg-blue-900 dark:text-blue-300",
+      },
+    },
+    {
+      to: "/leave-management",
+      icon: FaUsersCog,
+      text: "Leave Management",
+    },
+    {
+      to: "/equipments",
+      icon: FaListAlt,
+      text: "Equipments",
+    },
+    {
+      to: "/login",
+      icon: IoIosLogIn,
+      text: "Log In",
+    },
+    {
+      to: "/signup",
+      icon: IoIosLogIn,
+      text: "Sign Up",
+    },
+  ];
+
+  return (
+    <aside
+      className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 transition-transform ${
+        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+      }`}
+    >
+      <div className="h-full px-3 pb-4 overflow-y-auto">
+        <ul className="space-y-2 font-medium">
+          {links.map((link, index) => (
+            <li key={index}>
+              <Link
+                to={link.to}
+                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                <link.icon className="mr-3" />
+                <span className="flex-1 me-3">{link.text}</span>
+                {link.badge && (
+                  <span
+                    className={`inline-flex items-center justify-center px-2 ms-3 text-sm font-medium rounded-full ${link.badge.color} ${link.badge.darkColor}`}
+                  >
+                    {link.badge.text}
+                  </span>
+                )}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
+  );
+};
+
+export default Sidebar;

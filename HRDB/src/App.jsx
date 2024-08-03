@@ -1,12 +1,15 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./Components/Headbar-Sidebar/Header";
+import Sidebar from "./Components/Headbar-Sidebar/Sidebar";
+import Main from "./Components/Daxbod/Main";
+import Content from "./Components/Daxbod/Content";
+import Profile from "./Components/Daxbod/Profile/Profile";
+import Stats from "./Components/Daxbod/Stats";
+import Team from "./Components/Daxbod/Team";
+import Event from "./Components/Daxbod/Event";
 import { useState } from "react";
-import Header from "./Components/Header";
-import Sidebar from "./Components/Sidebar";
-import Main from "./Components/Main";
-import Content from "./Components/Content";
-import Employee from "./Components/Employee";
-import Stats from "./Components/Stats";
-import Team from "./Components/Team";
-import Event from "./Components/Event";
+import Employee from "./Components/Pages/Employee";
+import Payroll from "./Components/Pages/Payroll";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,8 +21,9 @@ function App() {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
   return (
-    <>
+    <Router>
       <div className={`${darkMode && "dark"} font-quickSand`}>
         <Header
           toggleDarkMode={toggleDarkMode}
@@ -27,6 +31,7 @@ function App() {
           toggleSidebar={toggleSidebar}
         />
         <Sidebar isSidebarOpen={isSidebarOpen} />
+
         <Main>
           <Content>
             <Stats darkMode={darkMode} />
@@ -35,10 +40,14 @@ function App() {
               <Event />
             </div>
           </Content>
-          <Employee>Employee</Employee>
+          <Profile>Employee</Profile>
         </Main>
       </div>
-    </>
+      <Routes>
+        <Route path="/employee" element={<Employee />} />
+        <Route path="/payroll" element={<Payroll />} />
+      </Routes>
+    </Router>
   );
 }
 

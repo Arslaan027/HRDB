@@ -1,8 +1,8 @@
 import React from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { MdSpaceDashboard } from "react-icons/md";
-import logo from "../Images/newlogo.png";
+// import { MdSpaceDashboard } from "react-icons/md";
+import logo from "../../Images/newlogo.png";
 
 const Header = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
   return (
