@@ -3,6 +3,7 @@ import { FaSun, FaMoon } from "react-icons/fa";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 // import { MdSpaceDashboard } from "react-icons/md";
 import logo from "../../Images/newlogo.png";
+import { Link } from "react-router-dom";
 
 const Header = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
   return (
@@ -22,7 +23,9 @@ const Header = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
           <div className="flex-grow flex ml-5">
             <a href="#" className="flex items-center">
               {/* <MdSpaceDashboard className="me-3 h-15 text-xl text-[#c20001]" /> */}
-              <img src={logo} className="me-3 h-10 text-xl" />
+              <Link to="/">
+                <img src={logo} className="me-3 h-10 text-xl" />
+              </Link>
               <span className="text-xl font-semibold sm:text-2xl dark:text-white">
                 DaxBod
               </span>

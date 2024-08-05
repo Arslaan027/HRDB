@@ -20,7 +20,7 @@ import arslaan from "../../../Images/arslaan.jpg";
 export const users = [
   {
     name: "Shereyar SM Adil",
-    id: "12",
+    id: "01",
     country: "India",
     joiningDate: "2020-05-15",
     jobTitle: "Software Engineer",
@@ -34,6 +34,12 @@ export const users = [
     dob: "1990-01-01",
     phone: "+1-234-567-8900",
     email: "john.doe@example.com",
+    salary: "$100,000", // Add salary field
+    allowance: "$5,000",
+    hra: "200",
+    ta: "400",
+    leave: "3",
+    pf: "300",
     equipments: [
       {
         item: "Laptop",
@@ -119,6 +125,12 @@ export const users = [
     dob: "1990-01-01",
     phone: "+1-234-567-8900",
     email: "john.doe@example.com",
+    salary: "$100,000", // Add salary field
+    allowance: "$5,000",
+    hra: "200",
+    ta: "400",
+    pf: "300",
+    leave: "3",
     equipments: [
       {
         item: "Laptop",
@@ -190,7 +202,7 @@ export const users = [
   },
   {
     name: "Shereyar SM Adil",
-    id: "12",
+    id: "02",
     country: "India",
     joiningDate: "2020-05-15",
     jobTitle: "Software Engineer",
@@ -204,6 +216,12 @@ export const users = [
     dob: "1990-01-01",
     phone: "+1-234-567-8900",
     email: "john.doe@example.com",
+    salary: "$100,000", // Add salary field
+    allowance: "$5,000",
+    hra: "200",
+    ta: "400",
+    pf: "300",
+    leave: "3",
     equipments: [
       {
         item: "Laptop",
@@ -275,7 +293,7 @@ export const users = [
   },
   {
     name: "Shereyar SM Adil",
-    id: "12",
+    id: "03",
     country: "India",
     joiningDate: "2020-05-15",
     jobTitle: "Software Engineer",
@@ -289,6 +307,12 @@ export const users = [
     dob: "1990-01-01",
     phone: "+1-234-567-8900",
     email: "john.doe@example.com",
+    salary: "$100,000", // Add salary field
+    allowance: "$5,000",
+    hra: "200",
+    ta: "400",
+    pf: "300",
+    leave: "3",
     equipments: [
       {
         item: "Laptop",
@@ -372,7 +396,7 @@ export const users = [
   },
   {
     name: "Arslaan Ahmad",
-    id: "13",
+    id: "04",
     country: "Iqra Colony",
     joiningDate: "2022-01-10",
     jobTitle: "Web Developer",
@@ -386,6 +410,12 @@ export const users = [
     dob: "1992-03-15",
     phone: "+1-234-567-8901",
     email: "arslaan.ahmad@example.com",
+    salary: "$100,000", // Add salary field
+    allowance: "$5,000",
+    hra: "200",
+    ta: "400",
+    pf: "300",
+    leave: "3",
     equipments: [
       {
         item: "Laptop",
@@ -451,7 +481,7 @@ export const users = [
   },
   {
     name: "Arslaan Ahmad",
-    id: "13",
+    id: "05",
     country: "Iqra Colony",
     joiningDate: "2022-01-10",
     jobTitle: "Web Developer",
@@ -465,6 +495,12 @@ export const users = [
     dob: "1992-03-15",
     phone: "+1-234-567-8901",
     email: "arslaan.ahmad@example.com",
+    salary: "$100,000", // Add salary field
+    allowance: "$5,000",
+    hra: "200",
+    ta: "400",
+    pf: "300",
+    leave: "3",
     equipments: [
       {
         item: "Laptop",
@@ -530,7 +566,7 @@ export const users = [
   },
   {
     name: "Arslaan Ahmad",
-    id: "13",
+    id: "06",
     country: "Iqra Colony",
     joiningDate: "2022-01-10",
     jobTitle: "Web Developer",
@@ -544,6 +580,12 @@ export const users = [
     dob: "1992-03-15",
     phone: "+1-234-567-8901",
     email: "arslaan.ahmad@example.com",
+    salary: "$100,000", // Add salary field
+    allowance: "$5,000",
+    leave: "3",
+    hra: "200",
+    ta: "400",
+    pf: "300",
     equipments: [
       {
         item: "Laptop",
@@ -609,7 +651,7 @@ export const users = [
   },
   {
     name: "Arslaan Ahmad",
-    id: "13",
+    id: "07",
     country: "Iqra Colony",
     joiningDate: "2022-01-10",
     jobTitle: "Web Developer",
@@ -623,6 +665,12 @@ export const users = [
     dob: "1992-03-15",
     phone: "+1-234-567-8901",
     email: "arslaan.ahmad@example.com",
+    salary: "$200,000", // Add salary field
+    allowance: "$5,000",
+    hra: "200",
+    ta: "400",
+    pf: "300",
+    leave: "3",
     equipments: [
       {
         item: "Laptop",
@@ -688,7 +736,7 @@ export const users = [
   },
   {
     name: "Arslaan Ahmad",
-    id: "13",
+    id: "08",
     country: "Iqra Colony",
     joiningDate: "2022-01-10",
     jobTitle: "Web Developer",
@@ -702,6 +750,9 @@ export const users = [
     dob: "1992-03-15",
     phone: "+1-234-567-8901",
     email: "arslaan.ahmad@example.com",
+    salary: "$1400,000", // Add salary field
+    allowance: "$5,000",
+    leave: "3",
     equipments: [
       {
         item: "Laptop",
@@ -767,7 +818,7 @@ export const users = [
   },
   {
     name: "Arslaan Ahmad",
-    id: "13",
+    id: "09",
     country: "Iqra Colony",
     joiningDate: "2022-01-10",
     jobTitle: "Web Developer",
@@ -781,6 +832,12 @@ export const users = [
     dob: "1992-03-15",
     phone: "+1-234-567-8901",
     email: "arslaan.ahmad@example.com",
+    salary: "$100,000", // Add salary fiel
+    hra: "200",
+    ta: "400",
+    pf: "300",
+    leave: "3",
+
     equipments: [
       {
         item: "Laptop",

@@ -24,25 +24,11 @@ const Sidebar = ({ isSidebarOpen }) => {
         darkColor: "dark:bg-gray-700 dark:text-gray-300",
       },
     },
-    {
-      to: "/payroll",
-      icon: FaFacebookMessenger,
-      text: "PayRoll",
-      badge: {
-        text: "Pending",
-        color: "bg-blue-100 text-blue-800",
-        darkColor: "dark:bg-blue-900 dark:text-blue-300",
-      },
-    },
-    {
-      to: "/leave-management",
-      icon: FaUsersCog,
-      text: "Leave Management",
-    },
+
     {
       to: "/equipments",
       icon: FaListAlt,
-      text: "Equipments",
+      text: "Enventory",
     },
     {
       to: "/login",
