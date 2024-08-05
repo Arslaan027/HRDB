@@ -1,4 +1,4 @@
-// Equip.js
+// src/components/Employee/Equip.js
 import React from "react";
 import { FaLaptopCode, FaAddressCard } from "react-icons/fa";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
@@ -6,49 +6,27 @@ import { IoMdTabletLandscape } from "react-icons/io";
 import Title from "../../Daxbod/Title";
 
 const Equipments = ({ member }) => {
-  const equipments = [
-    {
-      item: "Laptop",
-      icon: <FaLaptopCode size={32} className="m-auto" />,
-      issue: "Issue Date",
-      date: "31/02/2024",
-    },
-    {
-      item: "Mobile",
-      icon: <MdOutlinePhoneAndroid size={32} className="m-auto" />,
-      issue: "Issue Date",
-      date: "31/02/2024",
-    },
-    {
-      item: "Punch in Card",
-      icon: <FaAddressCard size={32} className="m-auto" />,
-      issue: "Issue Date",
-      date: "31/02/2024",
-    },
-    {
-      item: "Tablet",
-      icon: <IoMdTabletLandscape size={32} className="m-auto" />,
-      issue: "Issue Date",
-      date: "31/02/2024",
-    },
-  ];
-
   return (
-    <div className="bg-white p-6 rounded-2xl dark:bg-gray-600 dark:text-gray-300 flex-1 flex flex-col gap-5">
-      <Title>{member.name}</Title>
-      {equipments.map((equipment, index) => (
-        <div key={index} className="flex gap-5 items-center">
-          <span className="bg-gray-300 text-gray-700 p-2 h-14 w-14 rounded-full font-bold flex items-center justify-center">
-            {equipment.icon}
-          </span>
-          <div>
-            <h1 className="text-xl font-bold">{equipment.item}</h1>
-            <p className="text-gray-400">
-              {equipment.issue}: {equipment.date}
-            </p>
+    <div className="bg-white p-6 rounded-2xl shadow-md dark:bg-gray-600 dark:text-gray-300 mb-4">
+      <Title>Equipments</Title>
+      <div className="flex flex-col gap-4 dark:bg-gray-600 mt-4">
+        {member.equipments.map((equip, index) => (
+          <div
+            key={index}
+            className="flex items-center gap-3 bg-gray-100 dark:bg-gray-500 p-4 rounded-lg"
+          >
+            <div className="bg-gray-300 text-gray-700 p-2 h-14 w-14 rounded-full flex items-center justify-center">
+              {equip.icon}
+            </div>
+            <div>
+              <h1 className="text-lg font-semibold">{equip.item}</h1>
+              <p className="text-gray-400">
+                {equip.issue}: {equip.date}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

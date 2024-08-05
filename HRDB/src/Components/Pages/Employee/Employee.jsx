@@ -3,10 +3,11 @@ import Equipments from "./Equip";
 import Members from "./Members";
 import KPI from "./KPI";
 import EmployeeDetails from "./EmployeeDetails";
-import User from "../../Daxbod/Profile/User";
+import { users } from "../../Pages/Employee/Data";
+import PayrollButton from "./PayrollButton";
 
 const Employee = () => {
-  const [selectedMember, setSelectedMember] = useState(User[0]);
+  const [selectedMember, setSelectedMember] = useState(users[0]);
 
   const handleDetailsClick = (user) => {
     setSelectedMember(user);
@@ -31,8 +32,9 @@ const Employee = () => {
       {/* Right Section: Equipments and KPI */}
       <div className="flex-none lg:w-1/3 flex flex-col gap-5">
         {selectedMember && (
-          <div className="transition-transform duration-500 ease-in-out transform translate-y-0 opacity-100 animate-fadeIn ">
+          <div className="transition-transform duration-500 ease-in-out transform translate-y-0 opacity-100 animate-fadeIn">
             <Equipments member={selectedMember} />
+            <PayrollButton employee={selectedMember} />
             <KPI />
           </div>
         )}

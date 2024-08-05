@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "../src/Components/Layout";
 import Dashboard from "./Components/Daxbod/Dashboard";
 import Employee from "./Components/Pages/Employee/Employee"; // Example component
-import Payroll from "../src/Components/Pages/Payroll"; // Example component
+import Payroll from "../src/Components/Pages/Payroll/Payroll"; // Example component
 // Import other components as needed
 
 function App() {
