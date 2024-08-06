@@ -64,7 +64,7 @@ const Signup = () => {
                 type="email"
                 id="email"
                 value={email}
-                // onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400 dark:bg-gray-800 dark:text-gray-100"
                 placeholder="Enter your email"
                 required
@@ -81,7 +81,7 @@ const Signup = () => {
                 type="password"
                 id="password"
                 value={password}
-                // onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400 dark:bg-gray-800 dark:text-gray-100"
                 placeholder="Enter your password"
                 required
@@ -97,8 +97,8 @@ const Signup = () => {
               <input
                 type="password"
                 id="confirm-password"
-                // value={confirmPassword}
-                // onChange={(e) => setConfirmPassword(e.target.value)}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400 dark:bg-gray-800 dark:text-gray-100"
                 placeholder="Confirm your password"
                 required

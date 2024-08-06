@@ -92,48 +92,54 @@ const Inventory = () => {
         <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
           Current Inventory
         </h2>
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-200 text-gray-800 dark:bg-gray-600 dark:text-gray-200">
-            <tr>
-              <th className="py-3 px-6 text-left text-sm font-medium">Icon</th>
-              <th className="py-3 px-6 text-left text-sm font-medium">
-                Item Name
-              </th>
-              <th className="py-3 px-6 text-left text-sm font-medium">
-                Quantity
-              </th>
-              <th className="py-3 px-6 text-left text-sm font-medium">
-                Location
-              </th>
-              <th className="py-3 px-6 text-left text-sm font-medium">Cost</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-600">
-            {items.map((item) => (
-              <tr key={item.id}>
-                <td className="py-3 px-6 text-sm text-gray-800 dark:text-gray-200">
-                  {item.icon}
-                </td>
-                <td className="py-3 px-6 text-sm text-gray-800 dark:text-gray-200">
-                  {item.name}
-                </td>
-                <td className="py-3 px-6 text-sm text-gray-800 dark:text-gray-200">
-                  {item.quantity}
-                </td>
-                <td className="py-3 px-6 text-sm text-gray-800 dark:text-gray-200">
-                  {item.location}
-                </td>
-                <td className="py-3 px-6 text-sm text-gray-800 dark:text-gray-200">
-                  ₹{item.cost}
-                </td>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-200 text-gray-800 dark:bg-gray-600 dark:text-gray-200">
+              <tr>
+                <th className="py-3 px-6 text-left text-sm font-medium">
+                  Icon
+                </th>
+                <th className="py-3 px-6 text-left text-sm font-medium">
+                  Item Name
+                </th>
+                <th className="py-3 px-6 text-left text-sm font-medium">
+                  Quantity
+                </th>
+                <th className="py-3 px-6 text-left text-sm font-medium">
+                  Location
+                </th>
+                <th className="py-3 px-6 text-left text-sm font-medium">
+                  Cost
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-600">
+              {items.map((item) => (
+                <tr key={item.id}>
+                  <td className="py-3 px-6 text-sm text-gray-800 dark:text-gray-200">
+                    {item.icon}
+                  </td>
+                  <td className="py-3 px-6 text-sm text-gray-800 dark:text-gray-200">
+                    {item.name}
+                  </td>
+                  <td className="py-3 px-6 text-sm text-gray-800 dark:text-gray-200">
+                    {item.quantity}
+                  </td>
+                  <td className="py-3 px-6 text-sm text-gray-800 dark:text-gray-200">
+                    {item.location}
+                  </td>
+                  <td className="py-3 px-6 text-sm text-gray-800 dark:text-gray-200">
+                    ₹{item.cost}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div className="flex justify-between gap-5">
-        <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md mt-6 w-1/2">
+      <div className="flex flex-col sm:flex-row gap-5">
+        <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md mt-6 w-full sm:w-1/2">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
             Add New Item
           </h2>
@@ -170,7 +176,7 @@ const Inventory = () => {
               placeholder="Cost"
               className="p-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600"
             />
-            <div className="flex justify-center ">
+            <div className="flex justify-center">
               <button
                 onClick={handleAddItem}
                 className="bg-gray-500 text-white p-2 rounded-md hover:bg-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500"
@@ -182,7 +188,7 @@ const Inventory = () => {
           </div>
         </div>
 
-        <div className="bg-gray-300 dark:bg-gray-700 p-6 rounded-lg shadow-md mt-6 w-1/2 flex flex-col justify-center items-center text-center">
+        <div className="bg-gray-300 dark:bg-gray-700 p-6 rounded-lg shadow-md mt-6 w-full sm:w-1/2 flex flex-col justify-center items-center text-center">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
             Cost Analyzer
           </h2>
