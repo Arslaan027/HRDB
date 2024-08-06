@@ -2,10 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "../src/Components/Layout";
 import Dashboard from "./Components/Daxbod/Dashboard";
-import Employee from "./Components/Pages/Employee/Employee"; // Example component
-import Payroll from "../src/Components/Pages/Payroll/Payroll"; // Example component
+import Employee from "./Components/Pages/Employee/Employee";
+import Payroll from "../src/Components/Pages/Payroll/Payroll";
 import LeaveManagement from "./Components/Pages/Payroll/LeaveManagement";
-// Import other components as needed
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(false);
@@ -32,6 +31,8 @@ function App() {
           <Route path="/employee" element={<Employee />} />
           <Route path="/payroll" element={<Payroll />} />
           <Route path="/leave-management" element={<LeaveManagement />} />
+          <Route path="/payroll/:id" element={<Payroll />} />{" "}
+          {/* Ensure this route is correctly defined */}
         </Route>
       </Routes>
     </Router>

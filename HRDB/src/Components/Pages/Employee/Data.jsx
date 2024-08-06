@@ -20,7 +20,7 @@ import arslaan from "../../../Images/arslaan.jpg";
 export const users = [
   {
     name: "Shereyar SM Adil",
-    id: "01",
+    id: 1,
     country: "India",
     joiningDate: "2020-05-15",
     jobTitle: "Software Engineer",
@@ -111,7 +111,7 @@ export const users = [
   },
   {
     name: "Asad Khan",
-    id: "12",
+    id: 12,
     country: "India",
     joiningDate: "2020-05-15",
     jobTitle: "Software Engineer",
@@ -202,7 +202,7 @@ export const users = [
   },
   {
     name: "Salman Akhtar",
-    id: "02",
+    id: 2,
     country: "India",
     joiningDate: "2020-05-15",
     jobTitle: "Software Engineer",
@@ -293,7 +293,7 @@ export const users = [
   },
   {
     name: "Arslaan Ahmad",
-    id: "04",
+    id: 4,
     country: "Iqra Colony",
     joiningDate: "2022-01-10",
     jobTitle: "Web Developer",
@@ -378,7 +378,7 @@ export const users = [
   },
   {
     name: "Ayaan Khan",
-    id: "05",
+    id: 5,
     country: "Pakistan",
     joiningDate: "2021-02-20",
     jobTitle: "Data Analyst",

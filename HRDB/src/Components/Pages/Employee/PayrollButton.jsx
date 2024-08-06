@@ -28,7 +28,7 @@ const PayrollButton = ({
         {/* Button on the right */}
         {showButton && (
           <div>
-            <Link to="/payroll">
+            <Link to={`/payroll/${employee.id}`}>
               <button
                 className={`bg-gray-500 text-gray-300 p-2 sm:p-3 rounded-full text-xs sm:text-sm font-semibold dark:bg-gray-500 dark:text-gray-300 ${buttonClassName}`}
               >

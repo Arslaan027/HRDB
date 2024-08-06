@@ -21,15 +21,13 @@ const Header = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
 
           {/* Centered Logo and Title */}
           <div className="flex-grow flex ml-5">
-            <a href="#" className="flex items-center">
-              {/* <MdSpaceDashboard className="me-3 h-15 text-xl text-[#c20001]" /> */}
-              <Link to="/">
-                <img src={logo} className="me-3 h-10 text-xl" />
-              </Link>
-              <span className="text-xl font-semibold sm:text-2xl dark:text-white">
-                DaxBod
-              </span>
-            </a>
+            {/* <MdSpaceDashboard className="me-3 h-15 text-xl text-[#c20001]" /> */}
+            <Link to="/" className="flex items-center">
+              <img src={logo} className="me-3 h-10 text-xl" />
+            </Link>
+            <span className="text-xl font-semibold sm:text-2xl dark:text-white">
+              DaxBod
+            </span>
           </div>
 
           {/* Dark Mode Toggle Button */}
