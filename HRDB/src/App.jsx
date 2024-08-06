@@ -31,7 +31,7 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="/employee" element={<Employee />} />
           <Route path="/payroll" element={<Payroll />} />
-          <Route path="/leave-management  " element={<LeaveManagement />} />
+          <Route path="/leave-management" element={<LeaveManagement />} />
         </Route>
       </Routes>
     </Router>

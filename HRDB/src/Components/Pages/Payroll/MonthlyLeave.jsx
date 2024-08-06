@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 
 const MonthlyPayrole = () => {
   return (
-    <div className="bg-gray-300 p-10 pt-5 ml-2 dark:bg-gray-700 dark:text-white mt-8 w-2/3 rounded-2xl">
-      <div className="ml-5">
-        <Title>Leaves</Title>
-      </div>
+    <div className="bg-gray-300 p-10 pt-5  dark:bg-gray-700 dark:text-white mt-8 w-2/3 rounded-2xl">
+      <Title>Leaves</Title>
 
       <div className="max-w-4xl bg-white mt-5 shadow-md overflow-hidden dark:bg-gray-500 rounded-xl">
         <div className="overflow-y-auto max-h-60 ">
