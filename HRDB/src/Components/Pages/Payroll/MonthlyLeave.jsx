@@ -2,7 +2,9 @@ import React from "react";
 import Title from "../../Daxbod/Title";
 import { Link } from "react-router-dom";
 
-const MonthlyPayrole = () => {
+const MonthlyPayroll = () => {
+  const employeeId = "john-doe"; // Replace with dynamic employee ID or name
+
   return (
     <div className="bg-gray-300 p-10 pt-5  dark:bg-gray-700 dark:text-white mt-8 w-2/3 rounded-2xl">
       <Title>Leaves</Title>
@@ -66,8 +68,8 @@ const MonthlyPayrole = () => {
         </div>
       </div>
       <div className="mt-4 text-center">
-        <Link to="/leave-management">
-          <button className="bg-gray-500 text-gray-300 p-2 sm:p-3 rounded-full text-xs sm:text-sm font-bold dark:bg-gray-500 dark:text-gray-300 ">
+        <Link to={`/leave-management/${employeeId}`}>
+          <button className="bg-gray-500 text-gray-300 p-2 sm:p-3 rounded-full text-xs sm:text-sm font-bold dark:bg-gray-500 dark:text-gray-300">
             Leave Management
           </button>
         </Link>
@@ -76,4 +78,4 @@ const MonthlyPayrole = () => {
   );
 };
 
-export default MonthlyPayrole;
+export default MonthlyPayroll;

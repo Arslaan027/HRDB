@@ -13,7 +13,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 md:p-8">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 md:p-8 ml-64">
       <div className="flex flex-col md:flex-row w-full max-w-4xl bg-gray-100 dark:bg-gray-800">
         {/* Left Section: Logo and Text */}
         <div className="bg-gray-700 dark:bg-gray-900 p-4 sm:p-6 md:p-8 rounded-t-lg md:rounded-l-lg shadow-lg flex flex-col items-center justify-center md:w-1/2 mb-4 md:mb-0">

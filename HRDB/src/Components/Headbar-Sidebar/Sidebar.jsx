@@ -24,7 +24,11 @@ const Sidebar = ({ isSidebarOpen }) => {
         darkColor: "dark:bg-gray-700 dark:text-gray-300",
       },
     },
-
+    {
+      to: "/lms",
+      icon: FaListAlt,
+      text: "LMS",
+    },
     {
       to: "/enventory",
       icon: FaListAlt,
