@@ -13,7 +13,7 @@ const SearchBar = ({ query, setQuery, searchResult }) => {
       <form className="w-full max-w-sm">
         <div className="flex items-center border-b border-gray-500 py-2 mr-2">
           <input
-            className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            className="appearance-none bg-transparent border-none w-full text-gray-2    00 mr-3 py-1 px-2 leading-tight focus:outline-none"
             type="text"
             placeholder="Employee Name"
             aria-label="Full name"
