@@ -46,33 +46,4 @@ const EmployeeDetails = ({ employee }) => {
   );
 };
 
-EmployeeDetails.propTypes = {
-  employee: PropTypes.shape({
-    name: PropTypes.string,
-    id: PropTypes.string,
-    dob: PropTypes.string,
-    phone: PropTypes.string,
-    email: PropTypes.string,
-    joiningDate: PropTypes.string,
-    jobTitle: PropTypes.string,
-    department: PropTypes.string,
-    manager: PropTypes.string,
-    employmentType: PropTypes.string,
-    basicInfo: PropTypes.arrayOf(
-      PropTypes.shape({
-        label: PropTypes.string,
-        value: PropTypes.string,
-        icon: PropTypes.element,
-      })
-    ),
-    employmentInfo: PropTypes.arrayOf(
-      PropTypes.shape({
-        label: PropTypes.string,
-        value: PropTypes.string,
-        icon: PropTypes.element,
-      })
-    ),
-  }),
-};
-
 export default EmployeeDetails;

@@ -31,7 +31,7 @@ const LeaveManagement = () => {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 md:p-8 ml-64">
+    <div className="text-gray-500 bg-gray-100 p-4 sm:ml-64 flex flex-col lg:flex-row lg:gap-5 mt-14 dark:bg-gray-800">
       <Title>Leave Management System</Title>
       <div className="w-full max-w-4xl mt-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">

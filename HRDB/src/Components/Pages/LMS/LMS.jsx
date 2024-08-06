@@ -30,7 +30,7 @@ const LMS = () => {
   };
 
   return (
-    <div className="flex ml-60 mt-7 items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 md:p-8">
+    <div className="flex md:ml-60 mt-7 items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 md:p-8">
       <div className="flex flex-col md:flex-row w-full max-w-4xl bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg">
         {/* Left Section: Leave Request Form */}
         <div className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-t-lg md:rounded-l-lg shadow-lg md:w-1/2">

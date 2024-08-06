@@ -85,7 +85,7 @@ const Inventory = () => {
   const { total, tax, totalWithTax } = calculateTotalCost();
 
   return (
-    <div className="bg-gray-100 h-screen p-4 sm:ml-64 flex flex-col gap-5 mt-14 dark:bg-gray-800">
+    <div className="bg-gray-100 h-[100vh] sm:max-h-[100vh] p-4 sm:ml-64 flex flex-col gap-5 mt-14 dark:bg-gray-800">
       <Title>Inventory Management</Title>
 
       <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">

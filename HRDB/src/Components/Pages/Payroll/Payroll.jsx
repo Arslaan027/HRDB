@@ -12,10 +12,9 @@ const Payroll = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("Employee ID from URL:", id);
     if (id) {
       const employee = users.find((user) => user.id === parseInt(id));
-      console.log("Employee found:", employee);
+
       setSelectedEmployee(employee);
     }
   }, [id]);
@@ -26,8 +25,6 @@ const Payroll = () => {
   };
 
   if (!selectedEmployee) return <p>Loading...</p>;
-
-  console.log("Selected Employee:", selectedEmployee);
 
   return (
     <div className="flex flex-col lg:flex-row lg:gap-5 mt-14 dark:bg-gray-800">
