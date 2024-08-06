@@ -37,37 +37,37 @@ const Payroll = () => {
           showButton={false}
           buttonClassName="w-24"
         />
-        <div className="flex gap-4 mt-5 w-full">
-          <div className="bg-gray-300 p-6 dark:bg-gray-600 w-full md:w-1/3 rounded-xl shadow-lg flex flex-col justify-center items-center h-[12rem]">
+        <div className="flex flex-col gap-4 md:flex-row sm:mt-5 md:mt-5">
+          <div className="bg-gray-300 p-4 md:p-6 dark:bg-gray-600 flex-1 rounded-xl shadow-lg flex flex-col justify-center items-center h-[12rem]">
             <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300">
               Salary
             </h2>
-            <p className="font-bold text-3xl text-gray-800 dark:text-gray-100 mt-2">
+            <p className="font-bold text-2xl md:text-3xl text-gray-800 dark:text-gray-100 mt-2">
               {selectedEmployee.salary}
             </p>
           </div>
-          <div className="bg-gray-300 p-6 dark:bg-gray-600 w-full md:w-1/3 rounded-xl shadow-lg flex flex-col justify-center items-center h-[12rem]">
+          <div className="bg-gray-300 p-4 md:p-6 dark:bg-gray-600 flex-1 rounded-xl shadow-lg flex flex-col justify-center items-center h-[12rem]">
             <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300">
               Monthly Leaves
             </h2>
-            <p className="font-bold text-3xl text-gray-800 dark:text-gray-100 mt-2">
+            <p className="font-bold text-2xl md:text-3xl text-gray-800 dark:text-gray-100 mt-2">
               {selectedEmployee.leave}/5
             </p>
           </div>
-          <div className="bg-gray-300 p-6 dark:bg-gray-600 w-full md:w-1/3 rounded-xl shadow-lg flex flex-col justify-center items-center h-[12rem]">
+          <div className="bg-gray-300 p-4 md:p-6 dark:bg-gray-600 flex-1 rounded-xl shadow-lg flex flex-col justify-center items-center h-[12rem]">
             <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300">
               Allowance
             </h2>
-            <p className="font-bold text-gray-800 dark:text-gray-100 mt-2 text-center">
+            <p className="font-bold text-sm md:text-base text-gray-800 dark:text-gray-100 mt-2 text-center">
               <span className="block">HRA: {selectedEmployee.hra}</span>
               <span className="block">TA: {selectedEmployee.ta}</span>
               <span className="block">PF: {selectedEmployee.pf}</span>
             </p>
           </div>
         </div>
-        <div className="flex gap-5 mt-5">
-          <MonthlyPayrole className="w-2/3" />
-          <Leavegraph className="w-1/3" />
+        <div className="flex flex-col md:flex-row md:w-full gap-5 mt-5">
+          <MonthlyPayrole className="w-full md:w-full" />
+          <Leavegraph className="w-full md:w-full" />
         </div>
       </div>
     </div>

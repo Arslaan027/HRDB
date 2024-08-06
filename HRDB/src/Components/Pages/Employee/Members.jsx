@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { users } from "../../Pages/Employee/Data";
 import Title from "../../Daxbod/Title";
 import SearchBar from "./SearchBar";
@@ -47,15 +47,15 @@ const Members = ({ onDetailsClick }) => {
     dropdown.classList.toggle("hidden");
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     filterUsers();
   }, [query, selectedDepartments]);
 
   return (
     <>
-      <div className="flex top-0 left-0 right-0 justify-between items-center relative">
+      <div className="flex flex-col sm:flex-row justify-between items-center relative">
         <Title>Employees</Title>
-        <div className="flex items-center gap-5">
+        <div className="flex flex-col justify-center items-center sm:flex-row gap-5">
           <SearchBar
             query={query}
             setQuery={setQuery}
@@ -85,7 +85,7 @@ const Members = ({ onDetailsClick }) => {
           filteredUsers.map((user) => (
             <div
               key={user.id}
-              className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-md cursor-pointer hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+              className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-md cursor-pointer hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
               onClick={() => onDetailsClick(user)}
             >
               <img
@@ -93,7 +93,7 @@ const Members = ({ onDetailsClick }) => {
                 alt={user.name}
                 className="w-16 h-16 rounded-full object-cover"
               />
-              <div>
+              <div className="text-center sm:text-left">
                 <h1 className="text-lg font-semibold">{user.name}</h1>
                 <p className="text-gray-400">{user.jobTitle}</p>
               </div>
