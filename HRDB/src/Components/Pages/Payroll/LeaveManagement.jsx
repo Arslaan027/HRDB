@@ -1,9 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Title from "../../Daxbod/Title";
 
 const LeaveManagement = () => {
   const { employeeId } = useParams();
+  const navigate = useNavigate();
 
   // Example static data for leave requests
   const leaveRequests = [
@@ -30,7 +31,7 @@ const LeaveManagement = () => {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 md:p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 md:p-8 ml-64">
       <Title>Leave Management System</Title>
       <div className="w-full max-w-4xl mt-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
@@ -66,6 +67,12 @@ const LeaveManagement = () => {
             ))}
           </ul>
         )}
+        <button
+          onClick={() => navigate(-1)}
+          className="mt-4 bg-gray-500 text-white p-2 rounded-md hover:bg-gray-600 dark:bg-gray-700 dark:hover:bg-gray-800 flex justify-center items-center"
+        >
+          Go Back
+        </button>
       </div>
     </div>
   );
