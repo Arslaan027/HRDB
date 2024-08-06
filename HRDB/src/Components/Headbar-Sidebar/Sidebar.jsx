@@ -26,7 +26,7 @@ const Sidebar = ({ isSidebarOpen }) => {
     },
 
     {
-      to: "/equipments",
+      to: "/enventory",
       icon: FaListAlt,
       text: "Enventory",
     },

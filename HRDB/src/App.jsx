@@ -5,6 +5,9 @@ import Dashboard from "./Components/Daxbod/Dashboard";
 import Employee from "./Components/Pages/Employee/Employee";
 import Payroll from "../src/Components/Pages/Payroll/Payroll";
 import LeaveManagement from "./Components/Pages/Payroll/LeaveManagement";
+import Login from "./Components/Pages/Login/Login";
+import Inventory from "./Components/Pages/Inveentory/Inventory";
+import Signup from "./Components/Pages/Signup/Signup";
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(false);
@@ -32,7 +35,9 @@ function App() {
           <Route path="/payroll" element={<Payroll />} />
           <Route path="/leave-management" element={<LeaveManagement />} />
           <Route path="/payroll/:id" element={<Payroll />} />{" "}
-          {/* Ensure this route is correctly defined */}
+          <Route path="/enventory" element={<Inventory />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Route>
       </Routes>
     </Router>
