@@ -23,15 +23,15 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const storedEmail = JSON.parse(localStorage.getItem("email"));
-    const storedEmail = "ene@ene.com";
 
-    // const storedPassword = JSON.parse(localStorage.getItem("password"));
-    const storedPassword = "12345";
+    // Hardcoded credentials
+    const hardcodedEmail = "ene@ene.com";
+    const hardcodedPassword = "12wsxzaq";
 
-    if (email === storedEmail && password === storedPassword) {
+    if (email === hardcodedEmail && password === hardcodedPassword) {
+      // Set authentication status
       localStorage.setItem("loggedin", true);
-      localStorage.setItem("user", JSON.stringify(email));
+      // Navigate to home page
       navigate("/");
     } else {
       alert("Wrong Credentials");

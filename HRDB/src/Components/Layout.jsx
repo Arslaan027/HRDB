@@ -2,7 +2,6 @@ import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import Header from "./Headbar-Sidebar/Header";
 import Sidebar from "./Headbar-Sidebar/Sidebar";
-import Login from "./Pages/Login/Login";
 
 const Layout = ({ darkMode, toggleDarkMode, toggleSidebar, isSidebarOpen }) => {
   const auth = localStorage.getItem("loggedin");
@@ -18,7 +17,7 @@ const Layout = ({ darkMode, toggleDarkMode, toggleSidebar, isSidebarOpen }) => {
       <Outlet />
     </div>
   ) : (
-    <Navigate to="/Login" />
+    <Navigate to="/login" />
   );
 };
 

@@ -11,8 +11,15 @@ import Signup from "./Components/Pages/Signup/Signup";
 import LMS from "./Components/Pages/LMS/LMS";
 
 function App() {
-  const [darkMode, setDarkMode] = React.useState(false);
+  const [darkMode, setDarkMode] = React.useState(
+    localStorage.getItem("theme") === "dark"
+  );
   const [isSidebarOpen, setSidebarOpen] = React.useState(true);
+
+  React.useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   const toggleDarkMode = () => setDarkMode((prev) => !prev);
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
@@ -20,34 +27,33 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />}>
-          <Route
-            path="/"
-            element={
-              <Layout
-                darkMode={darkMode}
-                toggleDarkMode={toggleDarkMode}
-                toggleSidebar={toggleSidebar}
-                isSidebarOpen={isSidebarOpen}
-              />
-            }
-          >
-            <Route index element={<Dashboard />} />
-            <Route path="/employee" element={<Employee />} />
-            <Route path="/payroll" element={<Payroll />} />
-            <Route path="/lms" element={<LMS />} />
-            <Route
-              path="/leave-management/:employeeId"
-              element={<LeaveManagement />}
-            />
-            <Route path="/payroll/:id" element={<Payroll />} />
-            <Route path="/enventory" element={<Inventory />} />
-          </Route>
-        </Route>
-        {/* ==========Login/Signup============ */}
+        {/* Public Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        {/* ====================== */}
+
+        {/* Protected Routes */}
+        <Route
+          path="/"
+          element={
+            <Layout
+              darkMode={darkMode}
+              toggleDarkMode={toggleDarkMode}
+              toggleSidebar={toggleSidebar}
+              isSidebarOpen={isSidebarOpen}
+            />
+          }
+        >
+          <Route index element={<Dashboard />} />
+          <Route path="/employee" element={<Employee />} />
+          <Route path="/payroll" element={<Payroll />} />
+          <Route path="/lms" element={<LMS />} />
+          <Route
+            path="/leave-management/:employeeId"
+            element={<LeaveManagement />}
+          />
+          <Route path="/payroll/:id" element={<Payroll />} />
+          <Route path="/enventory" element={<Inventory />} />
+        </Route>
       </Routes>
     </Router>
   );
