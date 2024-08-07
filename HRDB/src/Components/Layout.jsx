@@ -1,11 +1,13 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import Header from "./Headbar-Sidebar/Header";
 import Sidebar from "./Headbar-Sidebar/Sidebar";
-import Main from "./Daxbod/Dashboard";
+import Login from "./Pages/Login/Login";
 
 const Layout = ({ darkMode, toggleDarkMode, toggleSidebar, isSidebarOpen }) => {
-  return (
+  const auth = localStorage.getItem("loggedin");
+
+  return auth ? (
     <div className={`min-h-screen ${darkMode ? "dark" : ""}`}>
       <Header
         toggleDarkMode={toggleDarkMode}
@@ -15,6 +17,8 @@ const Layout = ({ darkMode, toggleDarkMode, toggleSidebar, isSidebarOpen }) => {
       <Sidebar isSidebarOpen={isSidebarOpen} />
       <Outlet />
     </div>
+  ) : (
+    <Navigate to="/Login" />
   );
 };
 

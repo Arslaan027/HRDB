@@ -1,13 +1,11 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import {
-  FaCalendarAlt,
-  FaFacebookMessenger,
-  FaUsersCog,
-  FaListAlt,
-} from "react-icons/fa";
+import { FaCalendarAlt, FaUsersCog, FaListAlt } from "react-icons/fa";
 import { IoIosLogIn } from "react-icons/io";
 
 const Sidebar = ({ isSidebarOpen }) => {
+  const isLoggedIn = localStorage.getItem("loggedin");
+
   const links = [
     {
       to: "/",
@@ -34,6 +32,9 @@ const Sidebar = ({ isSidebarOpen }) => {
       icon: FaListAlt,
       text: "Enventory",
     },
+  ];
+
+  const authLinks = [
     {
       to: "/login",
       icon: IoIosLogIn,
@@ -72,6 +73,18 @@ const Sidebar = ({ isSidebarOpen }) => {
               </Link>
             </li>
           ))}
+          {!isLoggedIn &&
+            authLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  to={link.to}
+                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  <link.icon className="mr-3" />
+                  <span className="flex-1 me-3">{link.text}</span>
+                </Link>
+              </li>
+            ))}
         </ul>
       </div>
     </aside>

@@ -20,30 +20,34 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout
-              darkMode={darkMode}
-              toggleDarkMode={toggleDarkMode}
-              toggleSidebar={toggleSidebar}
-              isSidebarOpen={isSidebarOpen}
-            />
-          }
-        >
-          <Route index element={<Dashboard />} />
-          <Route path="/employee" element={<Employee />} />
-          <Route path="/payroll" element={<Payroll />} />
-          <Route path="/lms" element={<LMS />} />
+        <Route path="/" element={<Layout />}>
           <Route
-            path="/leave-management/:employeeId"
-            element={<LeaveManagement />}
-          />
-          <Route path="/payroll/:id" element={<Payroll />} />
-          <Route path="/enventory" element={<Inventory />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+            path="/"
+            element={
+              <Layout
+                darkMode={darkMode}
+                toggleDarkMode={toggleDarkMode}
+                toggleSidebar={toggleSidebar}
+                isSidebarOpen={isSidebarOpen}
+              />
+            }
+          >
+            <Route index element={<Dashboard />} />
+            <Route path="/employee" element={<Employee />} />
+            <Route path="/payroll" element={<Payroll />} />
+            <Route path="/lms" element={<LMS />} />
+            <Route
+              path="/leave-management/:employeeId"
+              element={<LeaveManagement />}
+            />
+            <Route path="/payroll/:id" element={<Payroll />} />
+            <Route path="/enventory" element={<Inventory />} />
+          </Route>
         </Route>
+        {/* ==========Login/Signup============ */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        {/* ====================== */}
       </Routes>
     </Router>
   );

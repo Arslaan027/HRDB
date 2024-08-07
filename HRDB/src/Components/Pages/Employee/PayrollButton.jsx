@@ -11,7 +11,7 @@ const PayrollButton = ({
 
   return (
     <div className="bg-gray-200 mt-5 p-6 rounded-xl dark:bg-gray-600 dark:text-gray-300 flex-1 flex flex-col gap-5">
-      <Title>Payroll</Title>
+      <Title>Selected Employee</Title>
       <div className="flex flex-col sm:flex-row md:flex-row items-center justify-between p-6 bg-white rounded-xl md:rounded-full shadow-md dark:bg-gray-700 dark:text-gray-300">
         {/* Employee details */}
         <div className="flex items-center gap-4 sm:gap-5">
@@ -34,7 +34,7 @@ const PayrollButton = ({
               <button
                 className={`bg-gray-500 text-gray-300 p-2 sm:p-3 rounded-full text-xs sm:text-sm font-semibold dark:bg-gray-500 dark:text-gray-300 ${buttonClassName}`}
               >
-                Payroll Data
+                Get Details
               </button>
             </Link>
           </div>

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import logo from "../../../Images/newlogo.png";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -9,7 +11,17 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    localStorage.setItem("user", JSON.stringify(name));
+    localStorage.setItem("email", JSON.stringify(email));
+    localStorage.setItem("password", JSON.stringify(password));
+
+    navigate("/login");
   };
 
   return (
@@ -22,11 +34,11 @@ const Signup = () => {
             alt="Company Logo"
             className="mb-4 sm:mb-6 h-16 sm:h-20 md:h-24 w-auto"
           />
-          <div className="font-[Outfit] text-white text-lg sm:text-xl md:text-2xl  mb-2 sm:mb-4 md:mb-2 text-center">
+          <div className="font-[Outfit] text-white text-lg sm:text-xl md:text-2xl mb-2 sm:mb-4 md:mb-2 text-center">
             Engineering and Environmental Solutions
           </div>
-          <div className="text-white text-sm sm:text-md md:text-xl  text-center">
-            Creating Susutainable Tomorrows
+          <div className="text-white text-sm sm:text-md md:text-xl text-center">
+            Creating Sustainable Tomorrows
           </div>
         </div>
 
