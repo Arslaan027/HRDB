@@ -24,14 +24,12 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Hardcoded credentials
     const hardcodedEmail = "ene@ene.com";
     const hardcodedPassword = "12wsxzaq";
 
     if (email === hardcodedEmail && password === hardcodedPassword) {
-      // Set authentication status
       localStorage.setItem("loggedin", true);
-      // Navigate to home page
+
       navigate("/");
     } else {
       alert("Wrong Credentials");
