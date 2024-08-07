@@ -6,7 +6,7 @@ import { users } from "../../Pages/Employee/Data";
 import PayrollButton from "./PayrollButton";
 
 const Employee = () => {
-  const [selectedMember, setSelectedMember] = useState(users[0]);
+  const [selectedMember, setSelectedMember] = useState(null);
 
   const handleDetailsClick = (user) => {
     setSelectedMember(user);

@@ -202,7 +202,7 @@ export const users = [
   },
   {
     name: "Salman Akhtar",
-    id: 2,
+    id: 10,
     country: "India",
     joiningDate: "2020-05-15",
     jobTitle: "Software Engineer",

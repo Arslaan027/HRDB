@@ -7,6 +7,7 @@ import { useDropzone } from "react-dropzone";
 import { MdCancel } from "react-icons/md";
 import { IoMdPersonAdd } from "react-icons/io";
 import Select from "react-select";
+import { AiFillDelete } from "react-icons/ai";
 
 const equipmentOptions = [
   { value: "Laptop", label: "Laptop" },
@@ -57,7 +58,7 @@ const Members = ({ onDetailsClick }) => {
 
   // Filter users based on query and selected departments
   const filterUsers = () => {
-    let result = initialUsers;
+    let result = JSON.parse(localStorage.getItem("users")) || initialUsers;
 
     if (query) {
       result = result.filter((user) =>
@@ -75,9 +76,9 @@ const Members = ({ onDetailsClick }) => {
   };
 
   const handleBackClick = () => {
-    setQuery(""); // Clear the search query
-    setSelectedDepartments([]); // Clear selected departments
-    setFilteredUsers(initialUsers); // Reset to show all users
+    setQuery("");
+    setSelectedDepartments([]);
+    setFilteredUsers(JSON.parse(localStorage.getItem("users")) || initialUsers); // Reset to show all users
   };
 
   const handleCheckboxChange = (department) => {
@@ -109,8 +110,10 @@ const Members = ({ onDetailsClick }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const newUser = { id: Date.now().toString(), ...newEmployee }; // Generate unique ID and add employee
-    setFilteredUsers((prev) => [...prev, newUser]);
+    const newUser = { id: Date.now().toString(), ...newEmployee };
+    const updatedUsers = [...filteredUsers, newUser];
+    setFilteredUsers(updatedUsers);
+    localStorage.setItem("users", JSON.stringify(updatedUsers)); // Save to local storage
     setNewEmployee({
       name: "",
       id: "",
@@ -135,6 +138,20 @@ const Members = ({ onDetailsClick }) => {
     });
     setShowForm(false);
   };
+
+  const handleRemoveEmployee = (id) => {
+    const updatedUsers = filteredUsers.filter((user) => user.id !== id);
+    setFilteredUsers(updatedUsers);
+    localStorage.setItem("users", JSON.stringify(updatedUsers)); // Update local storage
+  };
+
+  useEffect(() => {
+    // Load users from local storage
+    const storedUsers = JSON.parse(localStorage.getItem("users"));
+    if (storedUsers) {
+      setFilteredUsers(storedUsers);
+    }
+  }, []);
 
   useEffect(() => {
     filterUsers();
@@ -242,26 +259,35 @@ const Members = ({ onDetailsClick }) => {
               type="button"
               onClick={handleBackClick}
             >
-              Back
+              Go Back
             </button>
           </div>
         ) : (
           filteredUsers.map((user) => (
             <div
               key={user.id}
-              className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-md cursor-pointer hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
               onClick={() => onDetailsClick(user)}
+              className="p-4 bg-white font-semibold rounded-lg flex flex-col sm:flex-row gap-4 justify-between items-center shadow-md dark:bg-gray-600 dark:text-gray-300"
             >
-              <img
-                src={user.image}
-                alt={user.name}
-                className="w-16 h-16 rounded-full object-cover"
-              />
-              <div>
-                <h3 className="text-lg font-semibold">{user.name}</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {user.department}
-                </p>
+              <div className="flex items-center gap-4">
+                <img
+                  src={user.image}
+                  alt={user.name}
+                  className="w-16 h-16 object-cover rounded-full"
+                />
+                <div>
+                  <h3 className="text-lg font-bold">{user.name}</h3>
+                  <p>{user.jobTitle}</p>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <button
+                  className="flex-shrink-0 bg-gray-500 hover:bg-gray-700 border-gray-500 hover:border-gray-700 text-sm border-4 text-white py-1 px-2 rounded-full"
+                  type="button"
+                  onClick={() => handleRemoveEmployee(user.id)}
+                >
+                  <AiFillDelete className="text-xl" />
+                </button>
               </div>
             </div>
           ))
