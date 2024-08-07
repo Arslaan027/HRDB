@@ -4,7 +4,7 @@ import Header from "./Headbar-Sidebar/Header";
 import Sidebar from "./Headbar-Sidebar/Sidebar";
 
 const Layout = ({ darkMode, toggleDarkMode, toggleSidebar, isSidebarOpen }) => {
-  const auth = localStorage.getItem("loggedin");
+  const auth = localStorage.getItem("loggedin") === "true";
 
   return auth ? (
     <div className={`min-h-screen ${darkMode ? "dark" : ""}`}>

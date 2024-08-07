@@ -28,8 +28,7 @@ const Login = () => {
     const hardcodedPassword = "12wsxzaq";
 
     if (email === hardcodedEmail && password === hardcodedPassword) {
-      localStorage.setItem("loggedin", true);
-
+      localStorage.setItem("loggedin", "true");
       navigate("/");
     } else {
       alert("Wrong Credentials");

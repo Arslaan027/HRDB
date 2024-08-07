@@ -28,7 +28,7 @@ const Sidebar = ({ isSidebarOpen }) => {
       text: "LMS",
     },
     {
-      to: "/enventory",
+      to: "/Inventory",
       icon: FaListAlt,
       text: "Enventory",
     },

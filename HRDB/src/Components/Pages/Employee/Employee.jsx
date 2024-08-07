@@ -13,7 +13,7 @@ const Employee = () => {
   };
 
   return (
-    <div className="text-gray-500 bg-gray-100 p-4 sm:ml-64 flex flex-col lg:gap-5 mt-14 dark:bg-gray-800">
+    <div className="text-gray-500 bg-gray-100 p-4 sm:ml-64 flex flex-col lg:gap-5 mt-14 dark:bg-gray-800 h-screen">
       {/* Details */}
       <div className="flex-none  flex flex-col gap-5">
         {selectedMember && (

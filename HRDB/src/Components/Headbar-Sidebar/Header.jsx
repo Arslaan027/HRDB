@@ -33,10 +33,11 @@ const Header = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
               <Link to="/" className="flex items-center">
                 <img src={logo} className="me-3 h-10 text-xl" alt="Logo" />
               </Link>
-              <span className="text-lg font-semibold md-text-lg sm:text-xl dark:text-white items-center pt-2">
-                Daxbod
-                {/* {userName ? `greets, ${userName}` : " "} */}
-              </span>
+              <div className="flex items-center">
+                <span className="text-lg font-semibold md-text-lg sm:text-xl dark:text-white">
+                  Daxbod
+                </span>
+              </div>
             </div>
 
             {/* Dark Mode Toggle Button */}
@@ -45,14 +46,18 @@ const Header = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
               onClick={toggleDarkMode}
               aria-label="Toggle dark mode"
             >
-              {darkMode ? <FaSun /> : <FaMoon />}
+              {darkMode ? (
+                <FaSun className="text-xl" />
+              ) : (
+                <FaMoon className="text-xl" />
+              )}
             </button>
             <button
               type="button"
               onClick={() => setShowLogoutModal(true)}
               className="bg-slate-200 rounded-md p-1 dark:bg-slate-500 dark:text-slate-200 flex items-center gap-2"
             >
-              <FiLogOut /> LogOut
+              <FiLogOut className="text-xl" /> LogOut
             </button>
           </div>
         </div>

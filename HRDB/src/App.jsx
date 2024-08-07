@@ -1,9 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Layout from "../src/Components/Layout";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import Layout from "./Components/Layout";
 import Dashboard from "./Components/Daxbod/Dashboard";
 import Employee from "./Components/Pages/Employee/Employee";
-import Payroll from "../src/Components/Pages/Payroll/Payroll";
+import Payroll from "./Components/Pages/Payroll/Payroll";
 import LeaveManagement from "./Components/Pages/Payroll/LeaveManagement";
 import Login from "./Components/Pages/Login/Login";
 import Inventory from "./Components/Pages/Inveentory/Inventory";
@@ -24,6 +29,9 @@ function App() {
   const toggleDarkMode = () => setDarkMode((prev) => !prev);
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
 
+  const isAuthenticated = localStorage.getItem("loggedin") === "true";
+  console.log("isAuthenticated:", isAuthenticated); // Debugging line
+
   return (
     <Router>
       <Routes>
@@ -32,28 +40,32 @@ function App() {
         <Route path="/signup" element={<Signup />} />
 
         {/* Protected Routes */}
-        <Route
-          path="/"
-          element={
-            <Layout
-              darkMode={darkMode}
-              toggleDarkMode={toggleDarkMode}
-              toggleSidebar={toggleSidebar}
-              isSidebarOpen={isSidebarOpen}
-            />
-          }
-        >
-          <Route index element={<Dashboard />} />
-          <Route path="/employee" element={<Employee />} />
-          <Route path="/payroll" element={<Payroll />} />
-          <Route path="/lms" element={<LMS />} />
+        {isAuthenticated ? (
           <Route
-            path="/leave-management/:employeeId"
-            element={<LeaveManagement />}
-          />
-          <Route path="/payroll/:id" element={<Payroll />} />
-          <Route path="/enventory" element={<Inventory />} />
-        </Route>
+            path="/"
+            element={
+              <Layout
+                darkMode={darkMode}
+                toggleDarkMode={toggleDarkMode}
+                toggleSidebar={toggleSidebar}
+                isSidebarOpen={isSidebarOpen}
+              />
+            }
+          >
+            <Route index element={<Dashboard />} />
+            <Route path="/employee" element={<Employee />} />
+            <Route path="/payroll" element={<Payroll />} />
+            <Route path="/lms" element={<LMS />} />
+            <Route
+              path="/leave-management/:employeeId"
+              element={<LeaveManagement />}
+            />
+            <Route path="/payroll/:id" element={<Payroll />} />
+            <Route path="/Inventory" element={<Inventory />} />
+          </Route>
+        ) : (
+          <Route path="*" element={<Navigate to="/login" />} />
+        )}
       </Routes>
     </Router>
   );
