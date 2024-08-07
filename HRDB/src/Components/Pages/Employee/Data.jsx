@@ -111,7 +111,7 @@ export const users = [
   },
   {
     name: "Asad Khan",
-    id: 12,
+    id: 2,
     country: "India",
     joiningDate: "2020-05-15",
     jobTitle: "Software Engineer",
@@ -202,7 +202,7 @@ export const users = [
   },
   {
     name: "Salman Akhtar",
-    id: 10,
+    id: 3,
     country: "India",
     joiningDate: "2020-05-15",
     jobTitle: "Software Engineer",
