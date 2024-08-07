@@ -8,7 +8,7 @@ const Inventory = () => {
       id: 1,
       name: "Laptop",
       quantity: 10,
-      location: "Aligarh",
+      location: "Lenovo-E3 21`4",
       cost: 1000,
       icon: <FaLaptop />,
     },
@@ -16,7 +16,7 @@ const Inventory = () => {
       id: 2,
       name: "Mouse",
       quantity: 50,
-      location: "Aligarh",
+      location: "Bluetooth",
       cost: 20,
       icon: <FaMouse />,
     },
@@ -24,7 +24,7 @@ const Inventory = () => {
       id: 3,
       name: "Keyboard",
       quantity: 30,
-      location: "Aligarh",
+      location: "Fullsize with num-pad",
       cost: 50,
       icon: <FaKeyboard />,
     },
@@ -106,7 +106,7 @@ const Inventory = () => {
                   Quantity
                 </th>
                 <th className="py-3 px-6 text-left text-sm font-medium">
-                  Location
+                  Configuration
                 </th>
                 <th className="py-3 px-6 text-left text-sm font-medium">
                   Cost
@@ -162,10 +162,10 @@ const Inventory = () => {
             />
             <input
               type="text"
-              name="location"
+              name="Configuration"
               value={newItem.location}
               onChange={handleInputChange}
-              placeholder="Location"
+              placeholder="Configuration"
               className="p-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600"
             />
             <input
