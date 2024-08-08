@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaCalendarAlt, FaUsersCog, FaListAlt } from "react-icons/fa";
 import { IoIosLogIn } from "react-icons/io";
 
-const Sidebar = ({ isSidebarOpen }) => {
+const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   const isLoggedIn = localStorage.getItem("loggedin");
 
   const links = [
@@ -30,7 +30,7 @@ const Sidebar = ({ isSidebarOpen }) => {
     {
       to: "/Inventory",
       icon: FaListAlt,
-      text: "Enventory",
+      text: "Inventory",
     },
   ];
 
@@ -59,6 +59,7 @@ const Sidebar = ({ isSidebarOpen }) => {
             <li key={index}>
               <Link
                 to={link.to}
+                onClick={toggleSidebar} // Close sidebar when a link is clicked on mobile
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <link.icon className="mr-3" />
@@ -78,6 +79,7 @@ const Sidebar = ({ isSidebarOpen }) => {
               <li key={index}>
                 <Link
                   to={link.to}
+                  onClick={toggleSidebar} // Close sidebar when a link is clicked on mobile
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <link.icon className="mr-3" />

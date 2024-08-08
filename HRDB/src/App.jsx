@@ -19,7 +19,7 @@ function App() {
   const [darkMode, setDarkMode] = React.useState(
     localStorage.getItem("theme") === "dark"
   );
-  const [isSidebarOpen, setSidebarOpen] = React.useState(true);
+  const [isSidebarOpen, setSidebarOpen] = React.useState(false);
 
   React.useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
@@ -30,7 +30,6 @@ function App() {
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
 
   const isAuthenticated = localStorage.getItem("loggedin") === "true";
-  console.log("isAuthenticated:", isAuthenticated); // Debugging line
 
   return (
     <Router>

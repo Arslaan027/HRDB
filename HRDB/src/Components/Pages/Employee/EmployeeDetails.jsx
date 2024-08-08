@@ -11,7 +11,7 @@ const EmployeeDetails = ({ employee }) => {
 
   return (
     <div className="bg-white p-6 rounded-2xl dark:bg-gray-600 dark:text-gray-300 flex-1 flex flex-col gap-5">
-      <Title>{localStorage.getItem("user") || "Default Name"}</Title>
+      <Title>Deatils</Title>
       <div className="flex flex-col lg:flex-row gap-5">
         {/* Basic Information Box */}
         <div className="flex-1 bg-gray-100 p-4 rounded-lg shadow-md dark:bg-gray-500">
