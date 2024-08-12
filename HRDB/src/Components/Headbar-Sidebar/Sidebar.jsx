@@ -32,6 +32,11 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
       icon: FaListAlt,
       text: "Inventory",
     },
+    {
+      to: "/job-application",
+      icon: FaListAlt,
+      text: "Job Application",
+    },
   ];
 
   const authLinks = [
