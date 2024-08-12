@@ -37,6 +37,11 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
       icon: FaListAlt,
       text: "Job Application",
     },
+    {
+      to: "/application-form",
+      icon: FaListAlt,
+      text: "Application Form",
+    },
   ];
 
   const authLinks = [

@@ -15,6 +15,7 @@ import Inventory from "./Components/Pages/Inveentory/Inventory";
 import Signup from "./Components/Pages/Signup/Signup";
 import LMS from "./Components/Pages/LMS/LMS";
 import JobApplication from "./Components/Pages/Job-Application/JobApplication";
+import Form from "../src/Components/Pages/ApplicationForm/Applicationform";
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(
@@ -63,6 +64,7 @@ function App() {
             <Route path="/payroll/:id" element={<Payroll />} />
             <Route path="/Inventory" element={<Inventory />} />
             <Route path="/job-application" element={<JobApplication />} />
+            <Route path="/application-form" element={<Form />} />
           </Route>
         ) : (
           <Route path="*" element={<Navigate to="/login" />} />
